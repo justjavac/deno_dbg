@@ -1,6 +1,7 @@
 # dbg
 
-A `dbg(…)` function for Deno. Heavily inspired by Rusts' [`dbg!(…)` macro](https://doc.rust-lang.org/std/macro.dbg.html).
+A `dbg(…)` function for Deno. Heavily inspired by Rusts'
+[`dbg!(…)` macro](https://doc.rust-lang.org/std/macro.dbg.html).
 
 ## Examples
 
