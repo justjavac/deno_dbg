@@ -1,0 +1,10 @@
+{
+  "tasks": {
+    "factorial": "deno run --allow-read examples/factorial.ts"
+  },
+  "fmt": {
+    "options": {
+      "lineWidth": 120
+    }
+  }
+}
