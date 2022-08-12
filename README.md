@@ -1,6 +1,6 @@
 # dbg
 
-A `dbg(…)` function for Deno. Heavy inspired by Rusts [`dbg!(…)` macro](https://doc.rust-lang.org/std/macro.dbg.html).
+A `dbg(…)` function for Deno. Heavily inspired by Rusts' [`dbg!(…)` macro](https://doc.rust-lang.org/std/macro.dbg.html).
 
 ## Examples
 
@@ -43,9 +43,9 @@ This prints:
 
 Not just `console.debug`, but more:
 
-- colorfull output(can disable by `NO_COLOR` ENVIRONMENT)
-- print fine name, function name, line and col
-- atuo detect `--allow-read` permission(see [Read Permission](#read-permission))
+- colorful output(can disable by `NO_COLOR` ENVIRONMENT)
+- print file name, function name, line and column
+- auto detect `--allow-read` permission(see [Read Permission](#read-permission))
 
 ## Read Permission
 
