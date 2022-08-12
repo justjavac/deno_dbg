@@ -1,3 +1,18 @@
+/**
+ * A `dbg(…)` function for Deno. Heavy inspired by Rusts [`dbg!(…)` macro](https://doc.rust-lang.org/std/macro.dbg.html).
+ *
+ * a example:
+ *
+ * ```ts
+ * import { dbg } from "https://deno.land/x/dbg/mod.ts";
+ * const a = 2;
+ * const b = dbg(a * 2) + 1;
+ * //        ^-- [examples/main.ts:4:11] 4 (number)
+ * console.assert(b === 5);
+ * ```
+ * @module
+ */
+
 import { fromFileUrl, relative } from "https://deno.land/std@0.152.0/path/mod.ts";
 import { blue, gray, yellow } from "https://deno.land/std@0.152.0/fmt/colors.ts";
 
@@ -8,16 +23,6 @@ let warn = (msg: string) => {
 
 /**
  * Prints and returns the value of a given expression for quick and dirty debugging.
- *
- * @example
- *
- * ```ts
- * import { dbg } from "https://deno.land/x/dbg/mod.ts";
- * const a = 2;
- * const b = dbg(a * 2) + 1;
- * //        ^-- [examples/main.ts:4:11] 4 (number)
- * console.assert(b === 5);
- * ```
  */
 export function dbg<T>(value: T): T {
   try {
