@@ -52,7 +52,7 @@ export function dbg<T>(value: T): T {
           yellow(
             `No read access to <CWD>, use full path. Or run again with ${
               blue("--allow-read")
-            }. See https://github.com/justjavac/deno_dbg#read-access`,
+            }. See https://github.com/justjavac/deno_dbg#read-permission`,
           ),
         );
       }
