@@ -14,10 +14,9 @@
  */
 
 import { fromFileUrl, relative } from "https://deno.land/std@0.152.0/path/mod.ts";
-import { blue, gray, yellow } from "https://deno.land/std@0.152.0/fmt/colors.ts";
 
-let warn = (msg: string) => {
-  console.warn(msg);
+let warn = (...msg: string[]) => {
+  console.warn(...msg);
   warn = () => {};
 };
 
@@ -50,21 +49,27 @@ export function dbg<T>(value: T): T {
       } catch (err) {
         if ((err as Error).name === "PermissionDenied") {
           warn(
-            yellow(
-              `No read access to <CWD>, use full path. Or run again with ${
-                blue("--allow-read")
-              }. See https://github.com/justjavac/deno_dbg#read-permission`,
-            ),
+            "%cWarning: %cNo read access to <CWD>, use full path. Or run again with %c--allow-read%c. See https://github.com/justjavac/deno_dbg#read-permission",
+            "color:yellow",
+            "color:white",
+            "color:blue",
+            "color:white",
           );
         }
       }
     }
 
     console.debug(
-      "%s %s %s",
-      gray(`[${file}:${line}:${col}${fn ? ` (${fn})` : ""}]`),
+      "%c[%s:%s:%s%s] %c(%s) %c%s",
+      "color:gray",
+      file,
+      line,
+      col,
+      fn ? ` (${fn})` : "",
+      "color:white",
       value,
-      blue(`(${typeof value})`),
+      "color:blue",
+      typeof value,
     );
 
     return value;
